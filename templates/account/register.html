@@ -1,0 +1,50 @@
+{% extends 'news/base.html' %}
+{% load static %}
+
+{% block title %}Foydalanuvchilarni ro'yhatdan o'tkazish{% endblock title %}
+
+{% block content %}
+    <h1>Yangi foydalanuvchilarni ro'yhatdan o'tkazish</h1>
+    <p>Ro'yhatdan o'tish uchun quyidagi formani to'ldiring</p>
+
+    <form method="post">{% csrf_token %}
+<!--        {{ user_form.as_p }}-->
+        <div class="row mb-3">
+          <label for="colFormLabel" class="col-sm-2 col-form-label">Username</label>
+          <div class="col-sm-3">
+            <input type="text" class="form-control" id="colFormLabel" name="username">
+          </div>
+        </div>
+        <div class="row mb-3">
+          <label for="colFormLabel" class="col-sm-2 col-form-label">First name</label>
+          <div class="col-sm-3">
+            <input type="text" class="form-control" id="colFormLabel" name="first_name">
+          </div>
+        </div>
+        <div class="row mb-3">
+          <label for="colFormLabel" class="col-sm-2 col-form-label">Last name</label>
+          <div class="col-sm-3">
+            <input type="text" class="form-control" id="colFormLabel" name="last_name">
+          </div>
+        </div>
+        <div class="row mb-3">
+          <label for="colFormLabel" class="col-sm-2 col-form-label">Email adress</label>
+          <div class="col-sm-3">
+            <input type="email" class="form-control" id="colFormLabel" placeholder="admin@gmail.com" name="email">
+          </div>
+        </div>
+        <div class="row mb-3">
+          <label for="colFormLabel" class="col-sm-2 col-form-label">Parol</label>
+          <div class="col-sm-3">
+            <input type="password" class="form-control" id="colFormLabel" name="password">
+          </div>
+        </div>
+        <div class="row mb-3">
+          <label for="colFormLabel" class="col-sm-2 col-form-label">Parol takrorlang</label>
+          <div class="col-sm-3">
+            <input type="password" class="form-control" id="colFormLabel" name="password_2">
+          </div>
+        </div>
+        <button type="submit" class="btn btn-success">Ro'yhatdan o'tish</button>
+    </form>
+{% endblock content %}

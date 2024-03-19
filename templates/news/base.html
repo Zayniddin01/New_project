@@ -1,12 +1,19 @@
 {% load static %}
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <title>{% block title %} {% endblock title %}</title>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}">
+<!--  <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}">-->
+  <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.rtl.min.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.grid.min.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.grid.rtl.min.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.utilities.min.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.utilities.rtl.min.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.reboot.min.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.reboot.rtl.min.css' %}">
   <link rel="stylesheet" type="text/css" href="{% static 'css/font-awesome.min.css' %}">
   <link rel="stylesheet" type="text/css" href="{% static 'css/animate.css' %}">
   <link rel="stylesheet" type="text/css" href="{% static 'css/font.css' %}">
@@ -31,27 +38,34 @@
               <li><a href="{% url 'home_page' %}">Home</a></li>
               <li><a href="#">About</a></li>
               <li><a href="{% url 'contact_page' %}">Contact</a></li>
+              {% if user.is_authenticated and user.is_superuser %}
+              <li><a href="{% url 'admin_page' %}">Admin page</a></li>
+              {% endif %}
             </ul>
           </div>
           <div class="header_top_right">
+            {% if request.user.is_authenticated %}
+            <p><a class="header-top-btn" href="{% url 'user_profile' %}" >{{ user.username }}</a> </p>
+            <p><a class="header-top-btn" href="{% url 'logout' %}" >Logout</a> </p>
+            {% else %}
+            <p><a class="header-top-btn" href="{% url 'login' %}">Sign in</a> </p>
+            {% endif %}
             <p>{% now "jS F Y H:i"  %}</p>
           </div>
         </div>
       </div>
       <div class="col-lg-12 col-md-12 col-sm-12">
         <div class="header_bottom">
-          <div class="logo_area"><a href="index.html" class="logo"><img src="{% static 'images/logo.jpg' %}" alt=""></a></div>
+          <div class="logo_area"><a href="{% url 'home_page' %}" class="logo"><img src="{% static 'images/logo.jpg' %}" alt=""></a></div>
           <div class="add_banner"><a href="#"><img src="{% static 'images/addbanner_728x90_V1.jpg' %}" alt=""></a></div>
         </div>
       </div>
     </div>
   </header>
   <section id="navArea">
-    <nav class="navbar navbar-inverse" role="navigation">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
-      </div>
-      <div id="navbar" class="navbar-collapse collapse">
+    <nav class="navbar navbar-inverse">
+
+      <div id="navbar">
         <ul class="nav navbar-nav main_nav">
           <li class="active"><a href="{% url 'home_page' %}"><span class="fa fa-home desktop-home"></span><span class="mobile-show">Home</span></a></li>
           <li><a href="{% url 'country_news_page' %}">O'ZBEKISTON</a></li>
@@ -62,7 +76,11 @@
           <li><a href="{% url 'sport_news_page' %}">SPORT</a></li>
           <li><a href="{% url 'point_news_page' %}">NUQTAI-NAZAR</a></li>
           <li><a href="{% url 'contact_page' %}">Biz bilan aloqa</a></li>
-
+          <li>
+            <form class="" method="get" action="{% url 'search_results' %}">
+              <input type="search" name="q" placeholder="Qidiruv..." class="form-control">
+            </form>
+          </li>
         </ul>
       </div>
     </nav>
@@ -73,7 +91,7 @@
         <div class="latest_newsarea"> <span>Latest News</span>
           <ul id="ticker01" class="news_sticker">
             {% for news in latest_news %}
-            <li><a href="#"><img src="{{ news.image.url }}" alt="">{{ news.title }}</a></li>
+            <li><a href="#"><img src="{{ news.image.url }}" alt="">{{ news.title | truncatewords:3 }}</a></li>
             {% endfor %}
           </ul>
           <div class="social_area">
@@ -143,7 +161,7 @@
 <script src="{% static 'js/custom.js' %}"></script>
 <script src="{% static 'js/html5shiv.min.js' %}"></script>
 <script src="{% static 'js/respond.min.js' %}"></script>
-
+<script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
 {% endblock javascript %}
 </body>
 </html>

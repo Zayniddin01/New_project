@@ -1,0 +1,44 @@
+{% extends 'news/base.html' %}
+{% load static %}
+
+{% block title %}Foydalanuvchi profile{% endblock title %}
+
+{% block content %}
+    <h3>Xush kelibsiz, {{ user.username }}</h3>
+{% if profile.photo %}
+  <img src="{{ profile.photo.url }}" width="15%">
+{% endif %}
+  <p>Tug'ilgan yilingiz: {{ profile.date_of_birth }}</p>
+
+
+<form class="g-3">
+  <div class="row">
+    <div class="col-md-6">
+      <label for="inputEmail4" class="form-label">Username</label>
+      <input value="{{ user.username }}" class="form-control" id="inputEmail4" readonly placeholder="kiritilmagan">
+    </div>
+    <div class="col-md-6">
+      <label for="inputPassword4" class="form-label">Email</label>
+      <input value="{{ user.email }}" class="form-control" id="inputPassword4" readonly placeholder="kiritilmagan">
+    </div>
+    <div class="col-md-6">
+      <label for="inputEmail4" class="form-label">Ism</label>
+      <input value="{{ user.first_name }}" class="form-control" id="inputEmail4" readonly placeholder="kiritilmagan">
+    </div>
+    <div class="col-md-6">
+      <label for="inputPassword4" class="form-label">Familiya</label>
+      <input value="{{ user.last_name }}" class="form-control" id="inputPassword4" readonly placeholder="kiritilmagan">
+    </div>
+    <div class="container">
+      <div class=" justify-content-end">
+          <div class="col-4 justify-content-end">
+            <a href="{% url 'logout' %}"> <button  type="button" class="btn btn-danger">Chiqish</button></a>
+            <a href="{% url 'password_change' %}"><button type="button" class="btn btn-warning">Parolni almashtirish</button></a>
+            <a href="{% url 'edit_user_information' %}"><button type="button" class="btn btn-warning">Ma'lumotlarni yangilash</button></a>
+          </div>
+      </div>
+    </div>
+  </div>
+
+</form>
+{% endblock content %}

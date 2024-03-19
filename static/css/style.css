@@ -57,6 +57,51 @@ img:hover{opacity:0.75}
 .top_nav li a{display:inline-block; border-right:1px solid #333; color:#fff; font-size:11px; font-weight:bold; padding:20px 15px; text-transform:uppercase; -webkit-transition:all 0.5s; -o-transition:all 0.5s; transition:all 0.5s}
 .top_nav li a:hover{background-color:#d083cf}
 .header_top_right{float:left; display:inline; width:50%; text-align:right}
+.header-top-btn{
+padding: 5px 10px;
+background: transparent;
+border: 1px solid #d083cf;
+border-radius: 5px;
+color: #d083cf;
+transition: all 300ms;
+}
+.header-top-btn:hover{
+color: white;
+}
+.login{
+display:
+}
+.login-btn{
+padding: 8px 10px;
+border: 1px solid #1159b9;
+border-radius: 5px;
+color: #f5f5f5;
+transition: all 300ms;
+background: #1159b9
+}
+.login-btn:hover{
+color: #1159b9;
+background: #f5f5f5;
+}
+.login-btn-sign{
+padding: 8px 10px;
+border: 1px solid #04aa6d;
+border-radius: 5px;
+color: #f5f5f5;
+transition: all 300ms;
+background: #04aa6d;
+}
+.login-btn-sign:hover{
+color: #04aa6d;
+background: #f5f5f5;
+}
+.forget{
+color: #282a35;
+transition: all 300ms;
+}
+.forget:hover{
+color: #d083cf;
+}
 .header_top_right > p{color:#fff; display:inline-block; float:right; font:bold 12px sans-serif; margin-bottom:0; padding-bottom:20px; padding-right:8px; padding-top:20px}
 .header_bottom{background-color:#fff; display:inline; float:left; padding:15px 30px 15px; width:100%}
 .logo_area{display:inline; float:left; width:31%}
@@ -66,13 +111,21 @@ img:hover{opacity:0.75}
 .logo > span{ margin-left:-14px}
 .add_banner{float:right; width:728px; height:90px}
 .add_banner img{width:100%; height:100%}
-#navArea{float:left; display:inline; width:100%; padding:0 30px; background-color:#fff}
-.navbar{border:medium none; border-radius:0}
+#navArea{display:flex; width:100%; padding:0 30px; background-color:#fff;}
+#navbar{
+background-color:#212529;
+width:100%;
+}
+.navbar{width:100%; border:medium none; border-radius:0; margin-bottom:20px;}
 .navbar-inverse .navbar-nav > li > a{border-left:1px solid #383838; color:#ddd; font-family:'Oswald',sans-serif; display:inline-block; height:50px; line-height:50px; padding:0 14px; text-shadow:0 1px 1px #000; text-transform:uppercase; -webkit-transition:all 0.5s; -mz-transition:all 0.5s; -ms-transition:all 0.5s; -o-transition:all 0.5s; transition:all 0.5s}
 .navbar-inverse .navbar-nav > li:first-child a{border:none}
+.navbar-inverse .navbar-nav > li:last-child{margin:0 0 0 10px;}
 .navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > li > a:focus{ color:#fff}
 .navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse .navbar-nav > .active > a:focus{ color:#fff}
-.main-nav ul li a{}
+.navbar-nav{
+flex-direction:inherit;
+align-items: center;
+}
 .navbar-collapse{ padding-left:0}
 .mobile-show{display:none}
 .desktop-home{display:block; font-size:30px; margin-top:10px}
@@ -115,13 +168,15 @@ img:hover{opacity:0.75}
 .slick-next{ background-image:url(images/slider_next.png); background-repeat:no-repeat; background-position:center; left:60px}
 .slick-prev, .slick-next{background-color:#000; top:10%; width:40px; height:40px}
 .slick-prev:hover, .slick-next:hover{opacity:0.5}
-.latest_post{float:left; display:inline width:100%}
+.latest_post{float:left; display:inline; width:100%}
 .latest_post > h2{background:none repeat scroll 0 0 #151515; color:#fff; font-family:'Oswald',sans-serif; font-size:18px; margin-top:5px; font-weight:400; margin-bottom:10px; margin-left:0; padding:0; position:relative; text-align:center; text-transform:uppercase}
 .latest_post > h2 span{padding:4px 10px}
-.latest_postnav{height:390px !important; margin-top:20px}
+.latest_postnav{height:auto !important; margin-top:20px}
 .latest_postnav li{margin-bottom:10px; float:left; width:100%}
-.latest_post_container{display:inline; float:left; height:430px; position:relative; width:100%}
+.latest_post_container{display:inline; float:left; height:430px; position:relative; width:100%; overflow: hidden;}
 .latest_post_container:hover #prev-button, .latest_post_container:hover #next-button{display:block}
+.media-body{ margin-left: 10px; color: #2f2f2f;}
+a.catg_title{font-size:14px; color: #2f2f2f;}
 #prev-button{cursor:pointer; font-size:20px; left:0; position:absolute; text-align:center; top:-10px; width:100%; display:none}
 #next-button{cursor:pointer; display:none; font-size:20px; left:0; position:absolute; text-align:center; bottom:0; width:100%}
 #contentSection{float:left; display:inline; width:100%; background-color:#fff; padding:0 30px}
@@ -162,7 +217,6 @@ img:hover{opacity:0.75}
 .photo_grid figure h2, .photo_grid figure a{margin:0}
 .photo_grid figcaption a{color:#fff; font-size:68.5%; letter-spacing:1px; display:block; margin-top:7px}
 figure.effect-layla img{height:390px}
-figure.effect-layla figcaption{padding:1.5em}
 figure.effect-layla figcaption::before, figure.effect-layla figcaption::after{position:absolute; content:''; opacity:0}
 figure.effect-layla figcaption::before{top:20px; right:15px; bottom:20px; left:15px; border-top:1px solid #fff; border-bottom:1px solid #fff; -webkit-transform:scale(0,1); transform:scale(0,1); -webkit-transform-origin:0 0; transform-origin:0 0}
 figure.effect-layla figcaption::after{top:9px; right:25px; bottom:9px; left:25px; border-right:1px solid #fff; border-left:1px solid #fff; -webkit-transform:scale(1,0); transform:scale(1,0); -webkit-transform-origin:100% 0; transform-origin:100% 0}
