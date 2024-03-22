@@ -27,6 +27,8 @@ img:hover{opacity:0.75}
 .limeblue_bg{background-color:#7dc34d}
 .blue_bg{background-color:#09c}
 .btn{border-radius:0; margin-bottom:5px; -webkit-transition:all 0.5s; -o-transition:all 0.5s; transition:all 0.5s}
+.comment{margin-top: 10px;}
+.label{right:500px}
 .btn:hover{}
 .btn-red{background-color:red; color:#fff}
 .btn-red:hover{background-color:#c40505; color:#fff}

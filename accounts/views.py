@@ -2,7 +2,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
 from django.views import View
 
 from .forms import LoginForm, UserRegistrationForm, UserEditForm, ProfileEditForm
@@ -95,3 +95,10 @@ class EditUserView(LoginRequiredMixin,View):
             user_form.save()
             profile_form.save()
             return redirect('user_profile')
+
+def logout_view(request):
+    logout(request)
+    return redirect('log_out')
+
+def logout_page(request):
+    return render(request, 'registration/logged_out_page.html')

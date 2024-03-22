@@ -8,9 +8,10 @@
 {% block content %}
 
     <h2>{{ news.title }}</h2>
-    <h6>{{ news.publish_time }} | <i class="fa fa-eye" aria-hidden="true"></i> {% get_hit_count for news %} | izohlar soni: {{ comment_count }}</h6>
+    <h6>{{ news.publish_time }} | <i class="fa fa-eye" aria-hidden="true"></i> {% get_hit_count for news %} | <i class="fa fa-comment"></i> {{ comment_count }}</h6>
     <img src="{{ news.image.url }}">
     <p>{{ news.body }}</p>
+
 {% if request.user.is_authenticated and request.user.is_superuser %}
     <div class="card-footer text-center">
         <a href="{% url 'news_update' news.slug %}">Tahrirlash</a> |
@@ -33,12 +34,17 @@
 {% endfor %}
 
 
-<div class="col-md-8 card md-4 mt-3">
+<div class="col-md-12 card md-4 mt-3">
     <div class="card-body">
         <h3>Izoh qoldirish</h3>
-        <form method="post" style="margin-top: 1.3em">{% csrf_token %}
-            {{ comment_form.as_p }}
-            <button type="submit" class="btn btn-primary btn-lg">Yuborish</button>
+        <form method="post">{% csrf_token %}
+            <div class="form-floating">
+              <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea" name="body"></textarea>
+              <label class="label justify-content-start" for="floatingTextarea">Comments</label>
+            </div>
+            <div>
+                <button type="submit" class="comment btn btn-primary btn-lg ">Yuborish</button>
+            </div>
         </form>
     </div>
 </div>

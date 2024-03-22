@@ -1,6 +1,7 @@
 {% extends 'news/base.html' %}
 {% load static %}
 {% load hitcount_tags %}
+{% load i18n %}
 
 {% block title %}Bosh sahifa{% endblock title %}
 {% block content %}
@@ -26,7 +27,7 @@
       </div>
       <div class="col-lg-4 col-md-4 col-sm-4">
         <div class="latest_post">
-          <h2><span>So'ngi yangiliklar</span></h2>
+          <h2><span>{% blocktrans %}So'ngi yangiliklar{% endblocktrans %}</span></h2>
           <div class="latest_post_container">
             <div id="prev-button"><i class="fa fa-chevron-up"></i></div>
             <ul class="latest_postnav">
@@ -53,7 +54,7 @@
       <div class="col-lg-8 col-md-8 col-sm-8">
         <div class="left_content">
           <div class="single_post_content">
-            <h2><span>Mahalliy</span></h2>
+            <h2><span>{% blocktrans %}Mahalliy{% endblocktrans %}</span></h2>
             <div class="single_post_content_left">
               <ul class="business_catgnav  wow fadeInDown">
                 {% for local in local_news %}
@@ -88,7 +89,7 @@
           <div class="fashion_technology_area">
             <div class="fashion">
               <div class="single_post_content">
-                <h2><span>Iqtisodiyot</span></h2>
+                <h2><span>{% blocktrans %}Iqtisodiyot{% endblocktrans %}</span></h2>
                 <ul class="business_catgnav wow fadeInDown">
                   {% for economy in economy_news %}
                     {% if forloop.first %}
@@ -118,7 +119,7 @@
             </div>
             <div class="technology">
               <div class="single_post_content">
-                <h2><span>Fan-texnika</span></h2>
+                <h2><span>{% blocktrans %}Fan-texnika{% endblocktrans %}</span></h2>
                 <ul class="business_catgnav">
                   {% for texnology in texnology_news %}
                   {% if forloop.first %}
@@ -137,7 +138,7 @@
                   <li>
                     <div class="media wow fadeInDown d-flex"> <a href="{{ texnika.get_absolute_url }}" class="media-left"> <img alt="" src="{{ texnika.image.url }}"> </a>
                       <div class="media-body"> <a href="{{ texnika.get_absolute_url }}" class="catg_title">{{ texnika.title }}</a>
-                        <p><i class="fa fa-eye" aria-hidden="true"></i> {% get_hit_count for texnika %}</p>
+                        <p><i class="fa fa-eye" aria-hidden="true"></i> {% get_hit_count for texnika %} | <i class="fa fa-comment"></i> {{ comment_count }}</p>
                       </div>
                     </div>
                   </li>
@@ -148,7 +149,7 @@
             </div>
           </div>
           <div class="single_post_content">
-            <h2><span>Photography</span></h2>
+            <h2><span>{% blocktrans %}Fotosurat{% endblocktrans %}</span></h2>
             <ul class="photograph_nav  wow fadeInDown">
               <li>
                 <div class="photo_grid">
@@ -183,7 +184,7 @@
             </ul>
           </div>
           <div class="single_post_content">
-            <h2><span>Sport</span></h2>
+            <h2><span>{% blocktrans %}Sport{% endblocktrans %}</span></h2>
             <div class="single_post_content_left">
               <ul class="business_catgnav">
                 {% for sport in sport_news %}
@@ -220,7 +221,7 @@
       <div class="col-lg-4 col-md-4 col-sm-4">
         <aside class="right_content">
           <div class="single_sidebar">
-            <h2><span>Ommabop</span></h2>
+            <h2><span>{% blocktrans %}Ommabop{% endblocktrans %}</span></h2>
             <ul class="spost_nav">
               <li>
                 <div class="media wow fadeInDown"> <a href="pages/single_page.html" class="media-left"> <img alt="" src="{% static 'images/post_img1.jpg' %}"> </a>
@@ -246,9 +247,9 @@
           </div>
           <div class="single_sidebar">
             <ul class="nav nav-tabs" role="tablist">
-              <li role="presentation" class="active"><a href="#category" aria-controls="home" role="tab" data-toggle="tab">Category</a></li>
-              <li role="presentation"><a href="#video" aria-controls="profile" role="tab" data-toggle="tab">Video</a></li>
-              <li role="presentation"><a href="#comments" aria-controls="messages" role="tab" data-toggle="tab">Comments</a></li>
+              <li role="presentation" class="active"><a href="#category" aria-controls="home" role="tab" data-toggle="tab">{% blocktrans %}Kategoriya{% endblocktrans %}</a></li>
+              <li role="presentation"><a href="#video" aria-controls="profile" role="tab" data-toggle="tab">{% blocktrans %}Video{% endblocktrans %}</a></li>
+              <li role="presentation"><a href="#comments" aria-controls="messages" role="tab" data-toggle="tab">{% blocktrans %}Izohlar{% endblocktrans %}</a></li>
             </ul>
             <div class="tab-content">
               <div role="tabpanel" class="tab-pane active" id="category">
@@ -290,19 +291,19 @@
             </div>
           </div>
           <div class="single_sidebar wow fadeInDown">
-            <h2><span>Sponsor</span></h2>
+            <h2><span>{% blocktrans %}Sponsor{% endblocktrans %}</span></h2>
             <a class="sideAdd" href="#"><img src="{% static 'images/add_img.jpg' %}" alt=""></a> </div>
           <div class="single_sidebar wow fadeInDown">
-            <h2><span>Barcha kategoriyalar</span></h2>
+            <h2><span>{% blocktrans %}Barcha kategoriyalar{% endblocktrans %}</span></h2>
             <select class="catgArchive">
-              <option>Kategoriyani tanlang</option>
+              <option>{% blocktrans %}Kategoriyani tanlang{% endblocktrans %}</option>
               {% for kategory in categories %}
               <option>{{ kategory.name }}</option>
               {% endfor %}
             </select>
           </div>
           <div class="single_sidebar wow fadeInDown">
-            <h2><span>Links</span></h2>
+            <h2><span>{% blocktrans %}Havolalar{% endblocktrans %}</span></h2>
             <ul>
               <li><a href="#">Blog</a></li>
               <li><a href="#">Rss Feed</a></li>

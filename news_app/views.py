@@ -7,7 +7,6 @@ from django.urls import reverse_lazy
 from django.views.generic import TemplateView, ListView, UpdateView, DeleteView, CreateView
 from hitcount.utils import get_hitcount_model
 from hitcount.views import HitCountMixin
-
 from news_project.custom_permissions import OnlyLoggedSuperUser
 from .models import News, Category
 from .forms import ContactForm, CommentForm
@@ -16,7 +15,7 @@ def news_list(request):
     # news_list =  News.objects.filter(status=News.Status.Published)
     news_list = News.published.all()
     context = {
-        'news_list':news_list
+        'news_list': news_list
     }
     return render(request, "news/news_list.html", context)
 
@@ -89,10 +88,10 @@ class HomePageView(ListView):
         context = super().get_context_data(**kwargs)
         context['categories'] = Category.objects.all()
         context['news_list'] = News.published.all().order_by('-publish_time')[:15]
-        context['local_news'] = News.published.all().filter(category__name="JAMIYAT").order_by('-publish_time')[:5]
-        context['economy_news'] = News.published.all().filter(category__name="IQTISODIYOT").order_by('-publish_time')[:5]
-        context['texnology_news'] = News.published.filter(category__name="FAN-TEXNIKA").order_by('-publish_time')[:5]
-        context['sport_news'] = News.published.filter(category__name='SPORT').order_by('-publish_time')[:5]
+        context['local_news'] = News.published.all().filter(category__name=("JAMIYAT")).order_by('-publish_time')[:5]
+        context['economy_news'] = News.published.all().filter(category__name=("IQTISODIYOT")).order_by('-publish_time')[:5]
+        context['texnology_news'] = News.published.filter(category__name=("FAN-TEXNIKA")).order_by('-publish_time')[:5]
+        context['sport_news'] = News.published.filter(category__name=('SPORT')).order_by('-publish_time')[:5]
 
         return context
 
@@ -134,7 +133,7 @@ class CountryNewsView(ListView):
     context_object_name = "country_news"
 
     def get_queryset(self):
-        news = self.model.published.all().filter(category__name="O'ZBEKISTON")
+        news = self.model.published.all().filter(category__name=("O'ZBEKISTON"))
         return news
 
 class WorldNewsView(ListView):

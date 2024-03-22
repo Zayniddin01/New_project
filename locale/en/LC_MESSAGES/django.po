@@ -1,0 +1,167 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-03-22 17:26+0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: .\news_app\views.py:92 .\templates\news\base.html:93
+msgid "JAMIYAT"
+msgstr "SOCIETY"
+
+#: .\news_app\views.py:93 .\templates\news\base.html:92
+msgid "IQTISODIYOT"
+msgstr "ECONOMY"
+
+#: .\news_app\views.py:94 .\templates\news\base.html:94
+msgid "FAN-TEXNIKA"
+msgstr "SCIENCE AND TECHNOLOGY"
+
+#: .\news_app\views.py:95 .\templates\news\base.html:95
+msgid "SPORT"
+msgstr "SPORT"
+
+#: .\news_project\settings.py:123
+msgid "Uzbek"
+msgstr ""
+
+#: .\news_project\settings.py:124
+msgid "English"
+msgstr ""
+
+#: .\news_project\settings.py:125
+msgid "Russian"
+msgstr ""
+
+#: .\news_project\urls.py:12
+msgid "admin/"
+msgstr ""
+
+#: .\templates\news\base.html:39 .\templates\news\base.html:89
+msgid "Bosh sahifa"
+msgstr "Home"
+
+#: .\templates\news\base.html:40
+msgid "Sayt haqida"
+msgstr "About"
+
+#: .\templates\news\base.html:41 .\templates\news\base.html:157
+msgid "Aloqa"
+msgstr "Contact"
+
+#: .\templates\news\base.html:43
+msgid "Admin sahifasi"
+msgstr "Admin page"
+
+#: .\templates\news\base.html:68
+msgid "Chiqish"
+msgstr "Logout"
+
+#: .\templates\news\base.html:70
+msgid "Kirish"
+msgstr "Login"
+
+#: .\templates\news\base.html:90
+msgid "O'ZBEKISTON"
+msgstr "UZBEKISTAN"
+
+#: .\templates\news\base.html:91
+msgid "JOHON"
+msgstr "WORLD"
+
+#: .\templates\news\base.html:96
+msgid "NUQTAI-NAZAR"
+msgstr "POINT OF VIEW"
+
+#: .\templates\news\base.html:97
+msgid "Biz bilan aloqa"
+msgstr "About us"
+
+#: .\templates\news\base.html:100
+msgid "Qidiruv"
+msgstr "Search"
+
+#: .\templates\news\base.html:110 .\templates\news\home.html:30
+msgid "So'ngi yangiliklar"
+msgstr "Latest News"
+
+#: .\templates\news\base.html:142
+msgid "Rasmlar"
+msgstr "Images"
+
+#: .\templates\news\base.html:147
+msgid "Teglar"
+msgstr "Tags"
+
+#: .\templates\news\base.html:167
+msgid "Yangiliklar tasmasi"
+msgstr "News feed"
+
+#: .\templates\news\base.html:168
+msgid "MacDev tomonidan ishlab chiqilgan"
+msgstr "Developed by MacDev"
+
+#: .\templates\news\home.html:57
+msgid "Mahalliy"
+msgstr "Local"
+
+#: .\templates\news\home.html:92
+msgid "Iqtisodiyot"
+msgstr "Economy"
+
+#: .\templates\news\home.html:122
+msgid "Fan-texnika"
+msgstr "Science and technology"
+
+#: .\templates\news\home.html:152
+msgid "Fotosurat"
+msgstr "Photograph"
+
+#: .\templates\news\home.html:187
+msgid "Sport"
+msgstr "Sport"
+
+#: .\templates\news\home.html:224
+msgid "Ommabop"
+msgstr "Popular"
+
+#: .\templates\news\home.html:250
+msgid "Kategoriya"
+msgstr "Category"
+
+#: .\templates\news\home.html:251
+msgid "Video"
+msgstr "Video"
+
+#: .\templates\news\home.html:252
+msgid "Izohlar"
+msgstr "Comments"
+
+#: .\templates\news\home.html:294
+msgid "Sponsor"
+msgstr "Sponsor"
+
+#: .\templates\news\home.html:297
+msgid "Barcha kategoriyalar"
+msgstr "All Categories"
+
+#: .\templates\news\home.html:299
+msgid "Kategoriyani tanlang"
+msgstr "Select category"
+
+#: .\templates\news\home.html:306
+msgid "Havolalar"
+msgstr "Links"
